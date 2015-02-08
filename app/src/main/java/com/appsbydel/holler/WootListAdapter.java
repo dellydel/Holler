@@ -18,6 +18,7 @@ class WootListAdapter extends ArrayAdapter {
         super(context, R.layout.woot_row, wootDeals);
         this.wootDeals = wootDeals;
         this.context = context;
+        
     }
 
     @Override
