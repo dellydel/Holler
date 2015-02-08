@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Holler</string>
+    <string name="title_deal_detail">Deal Detail</string>
+    <string name="title_activity_main">Holler</string>
+    <string name="action_settings">Settings</string>
+    <string name="powered_by_title">Powered by</string>
+    <string name="api_key">512769a6823445bea2e9726fa7fdfb59</string>
+
+</resources>
