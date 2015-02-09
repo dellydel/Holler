@@ -1,8 +1,8 @@
 package com.appsbydel.holler;
 
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +29,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         DownloadDataTask task =  new DownloadDataTask();
         task.execute();
     }
@@ -60,12 +59,11 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
+
+    //Downloads woot data from web service call
     public class DownloadDataTask extends AsyncTask<String, Void, String> {
 
         private String generateURL() {
@@ -83,7 +81,9 @@ public class MainActivity extends ActionBarActivity {
             builder.append("site=www.woot.com&");
             builder.append("site=wine.woot.com&" );
             builder.append("site=shirt.woot.com&");
-            builder.append("site=tech.woot.com&");
+            builder.append("site=sellout.woot.com&");
+            builder.append("site=kids.woot.com&");
+            builder.append("site=home.woot.com&");
          /*
         builder.append(this.settings.WootMainSetting ? "site=www.woot.com&" : "");
         builder.append(this.settings.WineWootSetting ? "site=wine.woot.com&" : "");
@@ -106,20 +106,21 @@ public class MainActivity extends ActionBarActivity {
             final String serviceUrl = generateURL();
             HttpClient httpclient = new DefaultHttpClient(new BasicHttpParams());
             HttpGet request = new HttpGet(serviceUrl);
-            HttpResponse response = null;
-            InputStream inputStream = null;
+            HttpResponse response;
+            InputStream inputStream;
             try {
                 response = httpclient.execute(request);
                 HttpEntity entity = response.getEntity();
 
                 inputStream = entity.getContent();
-                BufferedReader reader = null;
+                BufferedReader reader;
                 reader = new BufferedReader
                         (new InputStreamReader(inputStream));
                 StringBuilder sb = new StringBuilder();
-                String line = null;
+                String line;
                 while ((line = reader.readLine()) != null) {
-                    sb.append(line + "\n");
+                    sb.append(line);
+                    sb.append("\n");
                 }
                 return sb.toString();
             } catch (IOException e) {
