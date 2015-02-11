@@ -1,11 +1,6 @@
 package com.appsbydel.holler;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -21,20 +16,20 @@ public class WootDetails
     public List<Offer> getOffers() { return offers; }
     public Offer getOffer() { return offer; }
     public Integer getSortOrder() {
-        if (site == "www.woot.com")
+        if (site.equals("www.woot.com"))
         {
             return 1;
         }
         return 2;
     }
     public String getSize(){
-        if (site == "www.woot.com")
+        if (site.equals("www.woot.com"))
         { return "large"; }
         return "medium";
     }
     public String getNewSite()
     {
-        if (site != "www.woot.com") {
+        if (!site.equals("www.woot.com")) {
             Integer dot;
             dot = site.indexOf('.');
             return site.substring(0, dot);

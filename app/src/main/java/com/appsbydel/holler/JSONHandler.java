@@ -1,28 +1,10 @@
 package com.appsbydel.holler;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import android.util.Log;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.BasicHttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,13 +13,12 @@ public class JSONHandler {
         List<WootDetails> allWoots = new ArrayList<WootDetails>();
         try {
             JSONArray woots = new JSONArray(result);
-            JSONArray photos;
             JSONObject obj;
             for (int i = 0; i < woots.length(); i++) {
                 obj = woots.getJSONObject(i);
                 JSONObject offer = (JSONObject) obj.getJSONArray("Offers").get(0);
-                JSONArray photosArray = (JSONArray) offer.getJSONArray("Photos");
-                JSONArray itemsArray = (JSONArray) offer.getJSONArray("Items");
+                JSONArray photosArray = offer.getJSONArray("Photos");
+                JSONArray itemsArray = offer.getJSONArray("Items");
                 WootDetails woot = new WootDetails();
                 woot.setSite(obj.getString("Site"));
                 woot.setTitle(obj.getString("Title"));
@@ -60,7 +41,7 @@ public class JSONHandler {
             Item item = new Item();
             item.setSalePrice(obj.getString("SalePrice"));
             List<BasicNameValuePair> l = new ArrayList<BasicNameValuePair>();
-            JSONArray attributesArray = (JSONArray) obj.optJSONArray("Attributes");
+            JSONArray attributesArray = obj.optJSONArray("Attributes");
             if(null != attributesArray){
                 JSONObject attObj;
                 for (int a = 0; a < attributesArray.length(); a++) {

@@ -1,7 +1,6 @@
 package com.appsbydel.holler;
 
 import android.graphics.Bitmap;
-import java.util.List;
 
 public class Photo
 {

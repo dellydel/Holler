@@ -1,5 +1,6 @@
 package com.appsbydel.holler;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -55,11 +56,28 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        return id == R.id.action_settings || super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                startActivity (new Intent(this, SettingsActivity.class));
+                return true;
+            case R.id.action_refresh:
+                DownloadDataTask task =  new DownloadDataTask();
+                task.execute();
+                return true;
+            case R.id.action_contact:
+                ContactDev();
+                return true;
+        }
+        super.onOptionsItemSelected(item);
+        return false;
+    }
+
+    private void ContactDev() {
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@appsbydel.com"});
+        email.putExtra(Intent.EXTRA_SUBJECT, "Holler for Android");
+        email.setType("message/rfc822");
+        startActivity(Intent.createChooser(email, "Choose an Email client :"));
     }
 
 
@@ -67,23 +85,23 @@ public class MainActivity extends ActionBarActivity {
     public class DownloadDataTask extends AsyncTask<String, Void, String> {
 
         private String generateURL() {
-            StringBuilder builder = new StringBuilder();
-            builder.append("http://api.woot.com/2/events.json?");
-            builder.append(GetSitesString());
-            builder.append("eventType=Daily&eventType=WootOff&key=");
-            builder.append(getString(R.string.api_key));
-            builder.append("&select=Title,Site,Offers.Photos,Offers.Items.SalePrice,Offers.Url,Offers.WriteUp,Offers.Specs");
-            return builder.toString();
+            String builder = "";
+            builder += "http://api.woot.com/2/events.json?";
+            builder += GetSitesString();
+            builder += "eventType=Daily&eventType=WootOff&key=";
+            builder += getString(R.string.api_key);
+            builder += "&select=Title,Site,Offers.Photos,Offers.Items.SalePrice,Offers.Url,Offers.WriteUp,Offers.Specs";
+            return builder;
         }
 
         private String GetSitesString() {
-            StringBuilder builder = new StringBuilder();
-            builder.append("site=www.woot.com&");
-            builder.append("site=wine.woot.com&" );
-            builder.append("site=shirt.woot.com&");
-            builder.append("site=sellout.woot.com&");
-            builder.append("site=kids.woot.com&");
-            builder.append("site=home.woot.com&");
+            String builder = "";
+            builder += "site=www.woot.com&";
+            builder += "site=wine.woot.com&" ;
+            builder += "site=shirt.woot.com&";
+            builder += "site=sellout.woot.com&";
+            builder += "site=kids.woot.com&";
+            builder += "site=home.woot.com&";
          /*
         builder.append(this.settings.WootMainSetting ? "site=www.woot.com&" : "");
         builder.append(this.settings.WineWootSetting ? "site=wine.woot.com&" : "");
@@ -98,7 +116,7 @@ public class MainActivity extends ActionBarActivity {
         builder.append(this.settings.AccessoriesWootSetting ? "site=accessories.woot.com&" : "");
         builder.append(this.settings.ComputersWootSetting ? "site=computers.woot.com&" : "");
         */
-            return builder.toString();
+            return builder;
         }
 
         @Override

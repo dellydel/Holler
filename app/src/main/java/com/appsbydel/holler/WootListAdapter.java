@@ -16,7 +16,7 @@ import java.util.List;
 
 
 class WootListAdapter extends ArrayAdapter {
-    private List<WootDetails> wootDeals;
+    private final List<WootDetails> wootDeals;
     //private Context context;
 
     public WootListAdapter(Context context, List<WootDetails> wootDeals) {
@@ -61,7 +61,7 @@ class WootListAdapter extends ArrayAdapter {
 
     //Downloads images based on url obtained in prior webservice call
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
+        final ImageView bmImage;
 
         public DownloadImageTask(ImageView bmImage) {
             this.bmImage = bmImage;
