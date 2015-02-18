@@ -1,12 +1,78 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.appsbydel.holler.AboutFragment">
+    tools:context="com.appsbydel.holler.AboutFragment"
+    android:padding="20dp">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is the About fragment" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="About"
+        android:id="@+id/txtAboutLabel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Holler Unofficial Woot Client"
+        android:id="@+id/txtHoller"
+        android:layout_below="@+id/txtAboutLabel"
+        android:layout_alignLeft="@+id/txtAboutLabel"
+        android:layout_alignStart="@+id/txtAboutLabel"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Version 1.0"
+        android:id="@+id/txtVersion"
+        android:layout_below="@+id/txtHoller"
+        android:layout_alignLeft="@+id/txtHoller"
+        android:layout_alignStart="@+id/txtHoller"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Developed by AppsByDel"
+        android:id="@+id/txtDeveloper"
+        android:layout_below="@+id/txtVersion"
+        android:layout_alignLeft="@+id/txtVersion"
+        android:layout_alignStart="@+id/txtVersion"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Powered by Woot.com"
+        android:id="@+id/txtPoweredBy"
+        android:layout_below="@+id/txtDeveloper"
+        android:layout_alignLeft="@+id/txtDeveloper"
+        android:layout_alignStart="@+id/txtDeveloper"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Rate and Review"
+        android:id="@+id/txtRate"
+        android:layout_below="@+id/txtPoweredBy"
+        android:layout_alignLeft="@+id/txtPoweredBy"
+        android:layout_alignStart="@+id/txtPoweredBy"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffffff" />
+
+</RelativeLayout>
