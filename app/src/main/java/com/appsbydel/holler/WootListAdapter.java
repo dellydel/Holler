@@ -17,12 +17,10 @@ import java.util.List;
 
 class WootListAdapter extends ArrayAdapter {
     private final List<WootDetails> wootDeals;
-    //private Context context;
 
     public WootListAdapter(Context context, List<WootDetails> wootDeals) {
         super(context, R.layout.woot_row, wootDeals);
         this.wootDeals = wootDeals;
-        //this.context = context;
     }
 
     @Override
@@ -54,8 +52,6 @@ class WootListAdapter extends ArrayAdapter {
         txtSite.setText(woot.getSite());
 
         new DownloadImageTask(wootImage).execute(woot.getOffer().getPhotos().get(0).getUrl());
-
-        //wootImage.setImageBitmap(woot.getOffer().getPhotos().get(0).getBitmap());
         return wootView;
     }
 

@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends Fragment
+{
     private int fragVal;
+
+
     static SettingsFragment init(int val) {
         SettingsFragment settingsFragment = new SettingsFragment();
         Bundle args = new Bundle();
@@ -20,6 +23,7 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SetUpSettings();
         fragVal = getArguments() != null ? getArguments().getInt("val") : 1;
     }
 
@@ -28,4 +32,14 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
+
+    void SetUpSettings()
+    {
+
+    }
+
+    void SaveSetting(View checkbox) {
+        //SharedPreferences sharedPreferences = getSharedPreferences("generalPreferences", Context.MODE_PRIVATE);
+    }
 }
+
