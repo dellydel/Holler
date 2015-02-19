@@ -1,12 +1,191 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.appsbydel.holler.SettingsFragment">
+    android:layout_height="wrap_content"
+    android:background="#ff669510"
+    tools:context="com.appsbydel.holler.SettingsFragment"
+    android:padding="20dp"
+    android:clickable="false">
 
 
-    <TextView android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is the Settings Fragment" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/general_settings"
+        android:id="@+id/txtGeneral"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#FFFFFF" />
 
-</FrameLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_in_browser"
+        android:id="@+id/chkBrowser"
+        android:layout_below="@+id/txtGeneral"
+        android:layout_alignLeft="@+id/txtGeneral"
+        android:layout_alignStart="@+id/txtGeneral"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/checkbox_selection"
+        android:id="@+id/txtBrowserNotice"
+        android:layout_below="@+id/chkBrowser"
+        android:layout_alignLeft="@+id/chkBrowser"
+        android:layout_alignStart="@+id/chkBrowser"
+        android:textColor="#afffffff"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/sites_to_load"
+        android:id="@+id/txtSelectSites"
+        android:layout_below="@+id/txtBrowserNotice"
+        android:layout_alignLeft="@+id/txtBrowserNotice"
+        android:layout_alignStart="@+id/txtBrowserNotice"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="25dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/woot.com"
+        android:id="@+id/chkWoot"
+        android:layout_below="@+id/txtSelectSites"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp"
+        android:checked="true"
+        android:enabled="true"
+        android:clickable="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wine.woot.com"
+        android:id="@+id/chkWine"
+        android:layout_below="@+id/chkWoot"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shirt.woot.com"
+        android:id="@+id/chkShirt"
+        android:layout_below="@+id/chkWine"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sellout.woot.com"
+        android:id="@+id/chkSellout"
+        android:layout_below="@+id/chkShirt"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kids.woot.com"
+        android:id="@+id/chkKids"
+        android:layout_below="@+id/chkSellout"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home.woot.com"
+        android:id="@+id/chkHome"
+        android:layout_below="@+id/chkKids"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sports.woot.com"
+        android:id="@+id/chkSports"
+        android:layout_below="@+id/chkHome"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tech.woot.com"
+        android:id="@+id/chkTech"
+        android:layout_below="@+id/chkSports"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tools.woot.com"
+        android:id="@+id/chkTools"
+        android:layout_below="@+id/chkTech"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accessories.woot.com"
+        android:id="@+id/chkAccessories"
+        android:layout_below="@+id/chkTools"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/computers.woot.com"
+        android:id="@+id/chkComputers"
+        android:layout_below="@+id/chkAccessories"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="10dp" />
+
+</RelativeLayout>
+    </ScrollView>

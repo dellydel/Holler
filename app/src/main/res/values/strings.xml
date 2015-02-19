@@ -10,5 +10,20 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="action_refresh">Refresh</string>
     <string name="action_contact">Contact Developer</string>
+    <string name="general_settings">General Settings</string>
+    <string name="checkbox_selection">Selecting this option will bypass the in-app details page and take you directly to the woot.com website to view product details.</string>
+    <string name="sites_to_load">Select sites to load...</string>
+    <string name="woot.com">woot.com</string>
+    <string name="wine.woot.com">wine.woot.com</string>
+    <string name="shirt.woot.com">shirt.woot.com</string>
+    <string name="sellout.woot.com">sellout.woot.com</string>
+    <string name="kids.woot.com">kids.woot.com</string>
+    <string name="home.woot.com">home.woot.com</string>
+    <string name="sports.woot.com">sports.woot.com</string>
+    <string name="tech.woot.com">tech.woot.com</string>
+    <string name="tools.woot.com">tools.woot.com</string>
+    <string name="accessories.woot.com">accessories.woot.com</string>
+    <string name="computers.woot.com">computers.woot.com</string>
+    <string name="open_in_browser">Open Woot items in browser</string>
 
 </resources>
